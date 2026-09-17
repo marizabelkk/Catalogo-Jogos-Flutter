@@ -11,8 +11,19 @@ class HomeView extends StatelessWidget {
     return Consumer<CatalogoViewModel>(
       builder: (context, viewModel, child) {
         return Scaffold(
+          backgroundColor: Colors.grey[200],
+
           appBar: AppBar(
-            title: const Text('Catálogo de Jogos'),
+            title: const Text(
+              'Catálogo de Jogos',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            centerTitle: true,
+            backgroundColor: Colors.blue,
+            foregroundColor: Colors.white,
+
             actions: [
               IconButton(
                 onPressed: () {
@@ -28,14 +39,14 @@ class HomeView extends StatelessWidget {
           ),
 
           body: GridView.builder(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(12),
 
             gridDelegate:
                 const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisExtent: 350,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
+              mainAxisExtent: 390,
+              crossAxisSpacing: 12,
+              mainAxisSpacing: 12,
             ),
 
             itemCount: viewModel.jogosFiltrados.length,
@@ -48,21 +59,32 @@ class HomeView extends StatelessWidget {
                   children: [
                     Image.asset(
                       jogo.imagem,
-                      height: 250,
+                      height: 285,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
 
-                    const SizedBox(height: 5),
+                    const SizedBox(height: 8),
 
                     Text(
                       jogo.nome,
-                      maxLines: 2,
+                      maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
 
-                    Text(jogo.genero),
+                    const SizedBox(height: 3),
+
+                    Text(
+                      jogo.genero,
+                      style: const TextStyle(
+                        fontSize: 14,
+                      ),
+                    ),
 
                     IconButton(
                       onPressed: () {
@@ -72,6 +94,9 @@ class HomeView extends StatelessWidget {
                         jogo.favorito
                             ? Icons.favorite
                             : Icons.favorite_border,
+                        color: jogo.favorito
+                            ? Colors.red
+                            : Colors.grey,
                       ),
                     ),
                   ],
