@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎮 Catálogo de Jogos
 
 Aplicativo desenvolvido em **Flutter** para a disciplina de **Códigos de Alta Performance - Mobile**.
@@ -74,3 +75,10 @@ Projeto desenvolvido como atividade avaliativa da disciplina de **Códigos de Al
 <!-- Coloque aqui o print da aplicação -->
 
 ![Tela do Catálogo](assets/print_catalogo.png)
+=======
+# Meu catálogo jogos
+
+Aluna: Maria Isabel Mariz
+<br>
+Matrícula: 03354801
+>>>>>>> dc5af19bfe259c30438b159f3c20c42ad604f074
